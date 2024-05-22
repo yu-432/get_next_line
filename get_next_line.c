@@ -6,7 +6,7 @@
 /*   By: yooshima <yooshima@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 12:57:58 by yooshima          #+#    #+#             */
-/*   Updated: 2024/05/22 13:15:57 by yooshima         ###   ########.fr       */
+/*   Updated: 2024/05/22 16:45:45 by yooshima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,9 +75,7 @@ char	*strjoin_free(char	**result, char *str)
 	joined = ft_strjoin(*result, str);
 	if (!joined)
 		return (free(str), free(free_ptr), NULL);
-	free(free_ptr);
-	free(str);
-	return (joined);
+	return (free(free_ptr), free(str), joined);
 }
 
 char	*get_next_line(int fd)
